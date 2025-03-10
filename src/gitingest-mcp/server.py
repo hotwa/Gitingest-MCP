@@ -1,5 +1,5 @@
 import httpx
-from typing import Any, Dict, Union
+from typing import Any, Dict, Union, Optional
 from ingest import GitIngester
 from mcp.server.fastmcp import FastMCP
 
@@ -12,19 +12,19 @@ repo_urls = {
 }
 
 @mcp.tool()
-async def get_repo_summary(org_or_username: str, repo_name: str) -> Union[str, Dict[str, str]]:
+async def get_repo_summary(owner: str, repo: str, branch: Optional[str] = None) -> Union[str, Dict[str, str]]:
 	"""
 	Get a summary of a GitHub repository that including repo name, files in repo and number of tokens in repo
 
 	Args:
-		org_or_username: The GitHub organization or username
-		repo_name: The repository name
+		owner: The GitHub organization or username
+		repo: The repository name
 	"""
-	url = f"https://github.com/{org_or_username}/{repo_name}"
+	url = f"https://github.com/{owner}/{repo}"
 
 	try:
 		# Create GitIngester and fetch data asynchronously
-		ingester = GitIngester(url)
+		ingester = GitIngester(url, branch=branch)
 		await ingester.fetch_repo_data()
 		return ingester.get_summary()
 	except Exception as e:

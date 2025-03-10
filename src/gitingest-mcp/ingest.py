@@ -4,9 +4,12 @@ from gitingest import ingest
 from typing import Any, Dict, List, Optional
 
 class GitIngester:
-	def __init__(self, url: str):
+	def __init__(self, url: str, branch: str):
 		"""Initialize the GitIngester with a repository URL."""
 		self.url: str = url
+		self.branch: Optional[str] = branch
+		if branch:
+			self.url = f"{url}/tree/{branch}"
 		self.summary: Optional[Dict[str, Any]] = None
 		self.tree: Optional[Any] = None
 		self.content: Optional[Any] = None
@@ -16,7 +19,8 @@ class GitIngester:
 		# Run the synchronous ingest function in a thread pool
 		loop = asyncio.get_event_loop()
 		summary, self.tree, self.content = await loop.run_in_executor(
-			None, lambda: ingest(self.url))
+			None, lambda: ingest(self.url)
+		)
 		self.summary = self._parse_summary(summary)
 
 	def _parse_summary(self, summary_str: str) -> Dict[str, Any]:
