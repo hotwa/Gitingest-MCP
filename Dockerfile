@@ -3,7 +3,8 @@ FROM python:3.12-alpine
 WORKDIR /app
 
 # Install uv
-RUN pip install --upgrade pip && \
+RUN apk add --no-cache curl && \
+    pip install --upgrade pip && \
     pip install uv
 
 # Copy all files into the container

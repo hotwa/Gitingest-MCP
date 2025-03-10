@@ -6,8 +6,6 @@ An MCP server for [gitingest](https://github.com/cyclotruc/gitingest). This allo
 - Project directory structure
 - File content
 
-
-
 ## Installation
 
 ### Installing via Smithery
@@ -71,7 +69,7 @@ To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/g
 
 5. If you have issues, follow this [MCP server documentation](https://modelcontextprotocol.io/quickstart/server)
 
-### Debug
+## Debug
 
 Run mcp inspector
 ```
