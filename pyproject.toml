@@ -1,7 +1,7 @@
 [project]
 name = "gitingest-mcp"
 version = "0.1.0"
-description = "Model context protocol server for gitingest"
+description = "Gitingest MCP server that provides Github repository info including file content, directory structure and other metadata"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
