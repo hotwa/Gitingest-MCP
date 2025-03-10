@@ -2,8 +2,8 @@ FROM python:3.12-alpine
 
 WORKDIR /app
 
-# Install uv
-RUN apk add --no-cache curl && \
+# Install curl, git and uv
+RUN apk add --no-cache curl git && \
     pip install --upgrade pip && \
     pip install uv
 
