@@ -7,13 +7,17 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("gitingest-mcp")
 
 @mcp.tool()
-async def git_repo_summary(
+async def git_summary(
 	owner: str, 
 	repo: str, 
 	branch: Optional[str] = None
 ) -> Union[str, Dict[str, str]]:
 	"""
-	Get a summary of a GitHub repository that includes repo name, files in repo and number of tokens in repo
+	Get a summary of a GitHub repository that includes 
+		- Repo name, 
+		- Files in repo
+		- Number of tokens in repo
+		- Summary from the README.md
 
 	Args:
 		owner: The GitHub organization or username
@@ -23,10 +27,19 @@ async def git_repo_summary(
 	url = f"https://github.com/{owner}/{repo}"
 
 	try:
-		# Create GitIngester and fetch data asynchronously
 		ingester = GitIngester(url, branch=branch)
 		await ingester.fetch_repo_data()
-		return ingester.get_summary()
+		summary = ingester.get_summary()
+
+		try: # Try to fetch README.md
+			readme_content = ingester.get_content(["README.md"])
+			if readme_content and "README.md" in readme_content:
+				summary = f"{summary}\n\n{readme_content}"
+		except Exception:
+			pass
+
+		return summary
+
 	except Exception as e:
 		return {
 			"error": f"Failed to get repository summary: {str(e)}. Try https://gitingest.com/{url} instead"
