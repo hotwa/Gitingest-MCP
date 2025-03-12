@@ -6,7 +6,7 @@ An MCP server for [gitingest](https://github.com/cyclotruc/gitingest). This allo
 - Project directory structure
 - File content
 
-<blockquote class="twitter-tweet" data-media-max-width="560"><a href="https://t.co/4qcgqpEK3q">pic.twitter.com/4qcgqpEK3q</a></p>&mdash; purav (@notpurav) <a href="https://twitter.com/notpurav/status/1898955689030193485?ref_src=twsrc%5Etfw">March 10, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+[View demo](https://twitter.com/notpurav/status/1898955689030193485)
 
 ## Installation
 
