@@ -1,6 +1,6 @@
 import httpx
-from .ingest import GitIngester
 from mcp.server.fastmcp import FastMCP
+from gitingest_mcp.ingest import GitIngester
 from typing import Any, Dict, Union, List, Optional
 
 # Initialize FastMCP server
