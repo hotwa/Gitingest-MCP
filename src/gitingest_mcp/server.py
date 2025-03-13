@@ -1,5 +1,5 @@
 import httpx
-from ingest import GitIngester
+from .ingest import GitIngester
 from mcp.server.fastmcp import FastMCP
 from typing import Any, Dict, Union, List, Optional
 
