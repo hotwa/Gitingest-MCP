@@ -54,10 +54,10 @@ To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/g
 					"--with",
 					"mcp[cli]",
 					"--with-editable",
-					"<path to gitingest-mcp project>/gitingest-mcp",
+					"<path to gitingest-mcp project>/gitingest_mcp",
 					"mcp",
 					"run",
-					"<path to gitingest-mcp project>/gitingest-mcp/src/gitingest-mcp/server.py"
+					"<path to gitingest-mcp project>/gitingest-mcp/src/gitingest_mcp/server.py"
 				]
 			}
 		}
@@ -70,5 +70,5 @@ To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/g
 
 Run mcp inspector
 ```
-uv run mcp dev src/gitingest-mcp/server.py
+uv run mcp dev src/gitingest_mcp/server.py
 ```

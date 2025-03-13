@@ -14,4 +14,4 @@ COPY . /app
 RUN uv sync
 
 # Set default command to run the MCP server
-CMD ["uv", "run", "src/gitingest-mcp/server.py"]
+CMD ["uv", "run", "src/gitingest_mcp/server.py"]
