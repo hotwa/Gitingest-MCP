@@ -107,6 +107,10 @@ async def git_files(
 			"error": f"Failed to get file content: {str(e)}. Try https://gitingest.com/{url} instead"
 		}
 
+def main():
+  """Entry point for the gitingest-mcp command."""
+  mcp.run(transport='stdio')
+
 if __name__ == "__main__":
 	# Initialize and run the server
-	mcp.run(transport='stdio')
+	main()
