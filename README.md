@@ -8,18 +8,45 @@ An MCP server for [gitingest](https://github.com/cyclotruc/gitingest). This allo
 
 https://github.com/user-attachments/assets/c1fa596b-a70b-4d37-91d9-ea5e80284793
 
+## Table of Contents
+- [Installation](#installation)
+  - [Installing via Smithery](#installing-via-smithery)
+  - [Install via Github](#install-via-github)
+  - [Installing Repo Manually](#installing-repo-manually)
+  - [Updating the MCP client configuration](#updating-the-mcp-client-configuration)
+- [Debug](#debug)
+
+
 ## Installation
 
 ### Installing via Smithery
 
-To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/gitingest-mcp):
+- To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/gitingest-mcp):
 
-- Claude Desktop
 	```bash
 	npx -y @smithery/cli install @puravparab/gitingest-mcp --client claude
 	```
 
-### Installing Manually
+### Install via Github
+
+1. Add this to the MCP client config file
+
+	```json
+	{
+		"mcpServers": {
+			"gitingest-mcp": {
+				"command": "<path to uv>/uvx",
+				"args": [
+					"--from",
+					"git+https://github.com/puravparab/gitingest-mcp",
+					"gitingest-mcp"
+				]
+			}
+		}
+	}
+	```
+
+### Installing Repo Manually
 
 1. Clone the repo
 	```bash
@@ -32,19 +59,9 @@ To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/g
 	uv sync
 	```
 
-3. Add to Claude Desktop
+3. Add this to the MCP client config file
 
-	Open config file in your IDE
-	```bash
-	cursor ~/Library/Application\ Support/Claude/claude_desktop_config.json
-	```
-	```bash
-	code ~/Library/Application\ Support/Claude/claude_desktop_config.json
-	```
-
-4. Add this to the configuration
-
-	```
+	```json
 	{
 		"mcpServers": {
 			"gitingest": {
@@ -66,9 +83,21 @@ To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/g
 
 5. If you have issues, follow this [MCP server documentation](https://modelcontextprotocol.io/quickstart/server)
 
+### Updating the MCP client configuration
+
+1. Add to Claude Desktop
+
+	Open config file in your IDE
+	```bash
+	cursor ~/Library/Application\ Support/Claude/claude_desktop_config.json
+	```
+	```bash
+	code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+	```
+
 ## Debug
 
-Run mcp inspector
-```
-uv run mcp dev src/gitingest_mcp/server.py
-```
+1. Using mcp inspector
+	```
+	uv run mcp dev src/gitingest_mcp/server.py
+	```
