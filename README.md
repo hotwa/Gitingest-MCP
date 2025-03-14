@@ -6,6 +6,10 @@ An MCP server for [gitingest](https://github.com/cyclotruc/gitingest). This allo
 - Project directory structure
 - File content
 
+<a href="https://glama.ai/mcp/servers/g0dylqhn3h">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/g0dylqhn3h/badge" alt="Gitingest-MCP MCP server" />
+</a>
+
 https://github.com/user-attachments/assets/c1fa596b-a70b-4d37-91d9-ea5e80284793
 
 ## Table of Contents
