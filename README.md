@@ -28,7 +28,16 @@ https://github.com/user-attachments/assets/c1fa596b-a70b-4d37-91d9-ea5e80284793
 - To install gitingest-mcp via [Smithery](https://smithery.ai/server/@puravparab/gitingest-mcp):
 
 	```bash
-	npx -y @smithery/cli install @puravparab/gitingest-mcp --client claude
+	npx -y @smithery/cli@latest install @puravparab/gitingest-mcp --client claude --config "{}" # Claude
+ 	```
+ 	```bash
+ 	npx -y @smithery/cli@latest run @puravparab/gitingest-mcp --client cursor --config "{}" # Cursor
+  	```
+  	```bash
+ 	npx -y @smithery/cli@latest install @puravparab/gitingest-mcp --client windsurf --config "{}" # Windsurf
+   	```
+   	```bash
+ 	npx -y @smithery/cli@latest install @puravparab/gitingest-mcp --client cline --config "{}" # Cline
 	```
 
 ### Install via Github
