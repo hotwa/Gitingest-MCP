@@ -13,7 +13,7 @@ services:
     # 端口映射：将主机的 8000 端口映射到容器的 8000 端口
     # 容器内的端口 (冒号右边) 应该与你在 server.py 中 mcp.run 指定的端口一致
     ports:
-      - "8000:8000"
+      - "8002:8002"
     # 给容器一个友好的名称 (可选)
     container_name: gitingest_mcp_server
     # 重启策略：除非手动停止，否则容器总是会尝试重启
@@ -22,7 +22,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1 # 确保 Python 日志直接输出，方便调试
       - MCP_HOST=0.0.0.0
-      - MCP_PORT=8000
+      - MCP_PORT=8002
     # (可选) 如果你的应用需要访问本地文件或持久化数据，可以配置 volumes
     # volumes:
     #   - ./some_local_data:/app/data

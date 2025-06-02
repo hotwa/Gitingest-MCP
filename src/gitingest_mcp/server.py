@@ -2,6 +2,7 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 from gitingest_mcp.ingest import GitIngester
 from typing import Any, Dict, Union, List, Optional
+import os
 
 # Initialize FastMCP server
 mcp = FastMCP("gitingest-mcp")
