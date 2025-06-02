@@ -109,7 +109,10 @@ async def git_files(
 
 def main():
   """Entry point for the gitingest-mcp command."""
-  mcp.run(transport='http', host='127.0.0.1', port=8000)
+  host = os.environ.get('MCP_HOST', '0.0.0.0')
+  port = int(os.environ.get('MCP_PORT', '8000'))
+  print(f"Starting MCP server on {host}:{port}") # 添加日志方便调试
+  mcp.run(transport='http', host=host, port=port)
 
 if __name__ == "__main__":
 	# Initialize and run the server
