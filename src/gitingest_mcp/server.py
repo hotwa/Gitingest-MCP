@@ -109,7 +109,7 @@ async def git_files(
 
 def main():
   """Entry point for the gitingest-mcp command."""
-  mcp.run(transport='stdio')
+  mcp.run(transport='http', host='127.0.0.1', port=8000)
 
 if __name__ == "__main__":
 	# Initialize and run the server
